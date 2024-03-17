@@ -14,6 +14,7 @@ const GEO_API_OPTIONS = {
 
 export async function fetchWeatherData(lat, lon) {
   try {
+    console.log(lat,lon);
     let [weatherPromise, forcastPromise] = await Promise.all([
       fetch(
         `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
@@ -25,6 +26,9 @@ export async function fetchWeatherData(lat, lon) {
 
     const weatherResponse = await weatherPromise.json();
     const forcastResponse = await forcastPromise.json();
+
+    console.log(weatherResponse,forcastResponse);
+
     return [weatherResponse, forcastResponse];
   } catch (error) {
     console.log(error);
