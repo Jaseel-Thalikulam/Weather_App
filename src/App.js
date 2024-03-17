@@ -36,7 +36,7 @@ function App() {
       const ipResponse = await fetch("https://api.ipify.org");
       const ip = await ipResponse.text();
       const dataResponse = await fetch(
-        `http://api.ipstack.com/${ip}?access_key=  121b7e6428894d20f53843b791fdb7533dd`
+        `http://api.ipstack.com/${ip}?access_key=b7e6428894d20f53843b791fdb7533dd`
       );
       const data = await dataResponse.json();
       setLatitude(data.latitude);
